@@ -6,6 +6,7 @@ const { navigationPage } = require("../support/page_object/navigationPage")
 const { formPopoverPage } = require("../support/page_object/popoverPage.js")
 const { onSmartTable } = require("../support/page_object/smartTablePage")
 const { formStepperPage } = require("../support/page_object/stepperPage.js")
+const { formToastrPage } = require("../support/page_object/toastrPage.js")
 
 describe('Test with Page Object', () => {
 
@@ -20,10 +21,9 @@ describe('Test with Page Object', () => {
         navigationPage.formExtraComponentsPage()
     })
 
-    it.only('test formLayoutPage', () => {
+    it.only('test formToastrPage', () => {
 
-        navigationPage.formPopoverPage()
-        formPopoverPage.clickWithCardTemplatePopovers()
-  
+        navigationPage.formToastrPage()
+        formToastrPage.fillAllToastrPage('top-left', 'english', 'g', '2000', 'info', true, true, true)
     })
 })

@@ -158,6 +158,7 @@ describe('First test suite', () => {
             })
         })
     }) 
+    
     it('Table', () => {
         cy.visit('/')
         cy.contains('Tables & Data').click()
