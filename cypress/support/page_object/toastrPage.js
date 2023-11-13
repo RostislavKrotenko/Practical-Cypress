@@ -47,7 +47,7 @@ export class FormToastrPage {
             })
         }
         if (showToastWithIcon) {
-            cy.get('nb-checkbox').find('[type="checkbox"]').eq(0).then( checkBox => {
+            cy.get('nb-checkbox').find('[type="checkbox"]').eq(2).then( checkBox => {
                 cy.wrap(checkBox).check({force: true})
                 cy.wrap(checkBox).should('be.checked')
             })

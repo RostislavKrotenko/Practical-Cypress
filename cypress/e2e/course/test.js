@@ -135,7 +135,6 @@ describe('First test suite', () => {
             const dateToAssert = selectDateFromCurrent(1000)
             cy.wrap(input).invoke('prop', 'value').should('contain', dateToAssert)
             cy.wrap(input).should('have.value', dateToAssert)
-
         })
     })
 
@@ -159,7 +158,7 @@ describe('First test suite', () => {
         })
     }) 
     
-    it('Table', () => {
+    it.only('Table', () => {
         cy.visit('/')
         cy.contains('Tables & Data').click()
         cy.contains('Smart Table').click()
@@ -196,7 +195,6 @@ describe('First test suite', () => {
                 }
             })
         })
-       
     })
     
     it('PopUp and TipUp', () => {
@@ -210,7 +208,7 @@ describe('First test suite', () => {
         })
     })
 
-    it.only('Dialog window', () => {
+    it('Dialog window', () => {
         cy.visit('/')
         cy.contains('Tables & Data').click()
         cy.contains('Smart Table').click()
