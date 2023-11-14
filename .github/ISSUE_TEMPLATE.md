@@ -1,57 +1,36 @@
-<!--
-ATTENTION! WE WILL HAVE TO CLOSE THIS ISSUE if you don't provide the needed information.
-Please read https://github.com/akveo/ngx-admin/blob/master/CONTRIBUTING.md before opening an issue.
--->
+---
+name: Test case template
+about: Describe this issue template's purpose here.
+title: ''
+labels: test case
+assignees: ''
 
-### Issue type
+---
 
-**I'm submitting a ...**  (check one with "x")
+# [TC-ID] : Title of the test
 
-* [ ] bug report
-* [ ] feature request
-* [ ] question about the decisions made in the repository
 
-### Issue description
+### Priority
+Priority label
 
-**Current behavior:**
-<!-- Describe how the bug manifests. -->
+## Description
 
-**Expected behavior:**
-<!-- Describe what the behavior would be without the bug. -->
+The description should tell the tester what they’re going to test and include any other pertinent information such as the test environment, test data, and preconditions/assumptions.
 
-**Steps to reproduce:**
-<!--  Please explain the steps required to duplicate the issue, especially if you are able to provide a sample application. -->
+### Precondition
 
-**Related code:**
-<!-- 
-If you are able to illustrate the bug or feature request with an example, please provide a sample application via one of the following means:
+Any preconditions that must be met prior to the test being executed.
 
-A sample application via GitHub
+## Test Steps
+| Step No.      | Step description       | Input data | Expected result   |
+|-------------|:-------------|:-----------|:-----|
+| 1. | what a tester should do |            | what a tester should see when they do that |
+| 2. | second |            | second expected |
 
-StackBlitz (https://stackblitz.com)
 
-Plunker (http://plnkr.co/edit/cpeRJs?p=preview)
+## Expected Result
 
--->
+The expected result tells the tester what they should experience as a result of the test steps.
 
-```
-insert short code snippets here
-```
+This is how the tester determines if the test case is a “pass” or “fail”.
 
-### Other information:
-
-**npm, node, OS, Browser**
-```
-<!--
-Node, npm: `node --version` and `npm --version`
-OS: Windows (7/8/10). Linux (incl. distribution). macOS (El Capitan? Sierra?)
-Browser: Chrome/Safari/Firefox/etc?
--->
-```
-
-**Angular, Nebular**
-```
-<!--
-Check your `package-lock.json` or locate a `package.json` in the `node_modules` folder.
--->
-```
