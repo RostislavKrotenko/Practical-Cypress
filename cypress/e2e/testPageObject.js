@@ -5,6 +5,9 @@ const { formLayoutPage } = require("../support/page_object/layoutPage")
 const { loginForm } = require("../support/page_object/loginPage.js")
 const { navigationPage } = require("../support/page_object/navigationPage")
 const { formPopoverPage } = require("../support/page_object/popoverPage.js")
+const { registerForm } = require("../support/page_object/registerPage.js")
+const { requestPaswword } = require("../support/page_object/requestPassword.js")
+const { resetPassswordForm } = require("../support/page_object/resetPasswordPage.js")
 const { onSmartTable } = require("../support/page_object/smartTablePage")
 const { formStepperPage } = require("../support/page_object/stepperPage.js")
 const { formToastrPage } = require("../support/page_object/toastrPage.js")
@@ -26,8 +29,7 @@ describe('Test with Page Object', () => {
 
     it.only('test formToastrPage', () => {
 
-        navigationPage.formLoginPage()
-        // loginForm.fillFormByCorrectData('test@test.com', 'apple123')
-        loginForm.clickOnForgotPasswordAndRegister()
+        navigationPage.formSteppertPage()
+        formStepperPage.clickTopStepper(2)
     })
 })

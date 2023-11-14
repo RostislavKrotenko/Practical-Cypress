@@ -24,15 +24,15 @@ export class LoginForm {
         })
     }
     
-    fillFormByIncorrectData(email, password, remembeMe=false) {
+    fillFormByIncorrectEmailAndPassword(email, password, rememberMe=false) {
         cy.get('form').then(form => {
             cy.wrap(form).find('[placeholder="Email address"]').then( emailField => {
                 cy.wrap(emailField).type(email)
-                cy.wrap(emailField).find('[class="caption status-danger"]').should('have.value', email)
+                cy.wrap(emailField).should('have.class', 'status-danger')
             })
             cy.wrap(form).find('[placeholder="Password"]').then ( passwordField => {
                 cy.wrap(passwordField).type(password)
-                cy.wrap(passwordField).should('have.value', password)
+                cy.wrap(passwordField).should('have.class', 'status-danger')
             })
 
             if (rememberMe) {
@@ -41,6 +41,7 @@ export class LoginForm {
 
             cy.wrap(form).submit()
         })
+
     }
 
     clickOnRegisterButton() {

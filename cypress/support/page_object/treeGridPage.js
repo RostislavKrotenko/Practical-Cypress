@@ -6,7 +6,7 @@ export class FormTreeGrid {
                         .find('[data-name="Layer 2"]')
                         .find('g')
                         .should('have.attr', 'data-name')
-                        .and('eq', 'chevron-down');
+                        .and('eq', 'chevron-down')
     }
 
     searchDocByName(name='project-1') {

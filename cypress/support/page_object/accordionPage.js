@@ -6,6 +6,11 @@ export class FormAccordionPage {
             cy.wrap(accordion).should('have.class', 'expanded')
         })
         cy.get('@collapseButton').click()
+
+        cy.contains('nb-accordion-item-header', 'Product Details')
+            .find('g g')
+            .should('have.attr', 'data-name')
+            .and('eq', 'chevron-down')
     }
 }
 
