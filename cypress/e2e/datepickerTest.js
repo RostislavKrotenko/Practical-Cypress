@@ -13,4 +13,8 @@ describe( 'Test Datepicker', () => {
     it('Select date in Common Datepicker', () => {
         onDatePickerPage.selectCommonDatepickerDateFromToday(200)
     })
+
+    it('Select range date in Datepicker With Range', () => {
+        onDatePickerPage.selectDatePickerRangeFromToday(2, 6)
+    })
 })
