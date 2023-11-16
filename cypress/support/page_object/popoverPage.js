@@ -14,15 +14,18 @@ export class FormPopoverPage {
     clickRightOnPopoverPosition() {
         cy.contains('nb-card', 'Popover Position').find('[nbpopoverplacement="right"]').click()
     }
-    clickWithFirstTabsTemplatePopovers() {
+    clickWithTabsTemplatePopovers(whatUpTab=false, secondTab=false) {
         cy.contains('nb-card', 'Template Popovers').find('button').eq(0).click()
-        cy.contains('nb-tabset', "What's up?").should('contain', 'Such a wonderful day!')
-    }
-    clickWithSecondTabTemplatePopovers() {
-        cy.contains('nb-card', 'Template Popovers').find('button').eq(0).click()
-        cy.contains('span', "Second Tab").click()
-        cy.get('[tabtitle="Second Tab"]').should('contain', 'Indeed!')
-    }
+        if (whatUpTab) {
+            cy.contains('span', "What's up?").click()
+            cy.contains('nb-tabset', "What's up?").should('contain', 'Such a wonderful day!')
+        }
+
+        if (secondTab) {
+            cy.contains('span', "Second Tab").click()
+            cy.get('[tabtitle="Second Tab"]').should('contain', 'Indeed!')
+        }
+    } 
     clickWithFormbTemplatePopovers(recipients, subject, message) {
         cy.contains('nb-card', 'Template Popovers').find('button').eq(1).click()
         cy.get('form').then( form => {
