@@ -18,8 +18,8 @@ export class SmartTable {
             cy.wrap(tableRow).find('.nb-checkmark').click()
         })
         cy.get('tbody tr').first().find('td').then( tableColumns => {
-            cy.wrap(tableColumns).eq(2).should('contain', 'Rostyslav')
-            cy.wrap(tableColumns).eq(3).should('contain', 'Krotenko')
+            cy.wrap(tableColumns).eq(2).should('contain', firstName)
+            cy.wrap(tableColumns).eq(3).should('contain', lastName)
         })
     }
 
