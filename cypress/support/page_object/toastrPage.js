@@ -33,7 +33,8 @@ export class FormToastrPage {
             cy.wrap(selectList).should('contain', type)
         })
     }
-    selectCheckBoxes(hideOnClick=false, preventArisingOfDuplicate=false, showToastWithIcon=false) {
+
+    checkCheckBoxes(hideOnClick=false, preventArisingOfDuplicate=false, showToastWithIcon=false) {
         if (hideOnClick) {
             cy.get('nb-checkbox').find('[type="checkbox"]').eq(0).then( checkBox => {
                 cy.wrap(checkBox).check({force: true})
@@ -50,6 +51,27 @@ export class FormToastrPage {
             cy.get('nb-checkbox').find('[type="checkbox"]').eq(2).then( checkBox => {
                 cy.wrap(checkBox).check({force: true})
                 cy.wrap(checkBox).should('be.checked')
+            })
+        }
+    }
+
+    uncheckCheckBoxes(hideOnClick=false, preventArisingOfDuplicate=false, showToastWithIcon=false) {
+        if (hideOnClick) {
+            cy.get('nb-checkbox').find('[type="checkbox"]').eq(0).then( checkBox => {
+                cy.wrap(checkBox).uncheck({force: true})
+                cy.wrap(checkBox).should('not.be.checked')
+            })
+        }
+        if(preventArisingOfDuplicate) {
+            cy.get('nb-checkbox').find('[type="checkbox"]').eq(1).then( checkBox => {
+                cy.wrap(checkBox).uncheck({force: true})
+                cy.wrap(checkBox).should('not.be.checked')
+            })
+        }
+        if (showToastWithIcon) {
+            cy.get('nb-checkbox').find('[type="checkbox"]').eq(2).then( checkBox => {
+                cy.wrap(checkBox).uncheck({force: true})
+                cy.wrap(checkBox).should('not.be.checked')
             })
         }
     }
