@@ -1,5 +1,3 @@
-import { createYield } from "typescript"
-
 export class RegisterForm {
 
     verifyRegisterTitle() {
