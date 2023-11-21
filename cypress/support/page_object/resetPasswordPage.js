@@ -1,5 +1,3 @@
-import { requestPaswword } from "./requestPassword"
-
 export class FormResetPassword {
 
     verifyTitleSubtitle() {

@@ -1,3 +1,5 @@
+
+
 export class LoginForm {
 
     verifyLoginTitleAndSubtitle() {
@@ -17,7 +19,7 @@ export class LoginForm {
             })
 
             if (rememberMe) {
-                cy.get('.custom-checkbox').check()
+                cy.get('[type="checkbox"]').check({force: true})
             }
 
             cy.wrap(form).submit()
@@ -36,7 +38,7 @@ export class LoginForm {
             })
 
             if (rememberMe) {
-                cy.get('.custom-checkbox').check()
+                cy.get('[type="checkbox"]').check({force: true})
             }
 
             cy.wrap(form).submit()
@@ -62,13 +64,6 @@ export class LoginForm {
 
     clickOnForgotPassword(email) {
         cy.get('.forgot-password').click()
-        cy.get('form').then( form => {
-            cy.wrap(form).find('input').then( input => {
-                cy.wrap(input).type(email)
-                cy.wrap(input).invoke('prop', 'value').should('contain', email)
-            })
-            cy.wrap(form).submit()
-        })
     }
 
     clickOnForgotPasswordAndBackToLogin() {
