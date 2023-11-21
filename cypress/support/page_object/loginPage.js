@@ -64,7 +64,7 @@ export class LoginForm {
 
     clickOnForgotPassword(email) {
         cy.get('.forgot-password').click()
-    }
+        }
 
     clickOnForgotPasswordAndBackToLogin() {
         cy.get('.forgot-password').click()
