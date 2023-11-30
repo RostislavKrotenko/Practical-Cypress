@@ -1,0 +1,20 @@
+name: Cypress Test
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  cypress:
+    runs-on: ubuntu-latest
+
+  steps:
+    -name: Checkout repository
+     uses: actions/checkout@v2
+
+    -name: Set up Node.js
+     run: npm install --force
+
+    -name: Run Cypress test
+      run: npm run cypress:run
