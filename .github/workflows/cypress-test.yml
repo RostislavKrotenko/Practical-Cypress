@@ -15,7 +15,5 @@ jobs:
           node-version: 18
       - name: Install dependencies
         run: npm install --force
-      - name: Run Server
-        run: npm start
-      - name: Cypress Test
-        run: npx cypress run
+      - name: Run Cypress Test
+        run: npm run cypress:e2e
