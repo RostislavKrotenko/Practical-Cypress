@@ -4,6 +4,7 @@ import { loginForm } from "../support/page_object/loginPage"
 import { navigationPage } from "../support/page_object/navigationPage"
 import { registerForm } from "../support/page_object/registerPage"
 import { requestPaswword } from "../support/page_object/requestPassword"
+import { resetPassswordForm } from "../support/page_object/resetPasswordPage"
 
 describe('Test Authorization', () => {
 
@@ -20,5 +21,12 @@ describe('Test Authorization', () => {
         requestPaswword.requestPasswordReset('test@test.com')
         navigationPage.formLoginPage()
         loginForm.fillFormByCorrectData('test@test.com', 'banana2345', true)
+    })
+
+    it('Test Change Password Form', () => {
+
+        navigationPage.formResetPasswordPage()
+        resetPassswordForm.verifyTitleSubtitle()
+        resetPassswordForm.fillChangePasswordByCorrectData('newdata1')
     })
 })
