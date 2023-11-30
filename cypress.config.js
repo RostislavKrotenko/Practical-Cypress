@@ -9,4 +9,8 @@ module.exports = defineConfig({
     excludeSpecPattern: ['**/1-getting-started', '**/2-advanced-examples'],
     specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx}',
   },
+  reporter: "cypress-multi-reporters",
+  reporterOptions: {
+    configFile: "reporter-config.json"
+  }
 })
