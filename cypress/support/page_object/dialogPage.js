@@ -9,7 +9,7 @@ export class FormDialogPage {
     openDialogWithComponent() {
         cy.contains('nb-card', 'Open Dialog').contains('button', 'Open Dialog with component').click()
     }
-    openOpenDialogWithComponent() {
+    openDialogWithTemplate() {
         cy.contains('nb-card', 'Open Dialog').contains('button', 'Open Dialog with template').click()
     }
     enterNameInReturnResultFromDialog(name, submit=true) {
@@ -25,9 +25,6 @@ export class FormDialogPage {
             cy.get('[status="danger"]').click()
         }
     }
-    
-    
-    
 }
 
 export const formDialogPage = new FormDialogPage()
