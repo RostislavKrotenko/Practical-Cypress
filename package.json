@@ -30,7 +30,7 @@
     "prepush": "npm run lint:ci",
     "release:changelog": "npm run conventional-changelog -- -p angular -i CHANGELOG.md -s",
     "cypress:run": "npx cypress run",
-    "cypress:e2e": "start-test start http://localhost:4200 cypress:run && npm run junit:merge && npm run mochawesome:merge",
+    "cypress:e2e": "start-test start http://localhost:4200 cypress:run",
     "delete:reports": "del cypress\\results\\*",
     "prereport": "npm run delete:reports",
     "mochawesome:merge": "npx mochawesome-merge \"cypress/results/mochawesome/*.json\" > mochawesome.json && npx marge mochawesome.json",
